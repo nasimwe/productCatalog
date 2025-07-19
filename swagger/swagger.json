@@ -1,0 +1,222 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Product Catalog API",
+      "version": "1.0.0",
+      "description": "API for managing products and categories."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000"
+      }
+    ],
+    "paths": {
+      "/api/products": {
+        "get": {
+          "summary": "Get all products",
+          "responses": {
+            "200": {
+              "description": "List of products"
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new product",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Product created"
+            }
+          }
+        }
+      },
+      "/api/products/low-stock": {
+        "get": {
+          "summary": "Get products with low stock",
+          "parameters": [
+            {
+              "name": "threshold",
+              "in": "query",
+              "required": false,
+              "schema": { "type": "integer" }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Low stock products"
+            }
+          }
+        }
+      },
+      "/api/products/{id}": {
+        "get": {
+          "summary": "Get product by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Product found" },
+            "404": { "description": "Product not found" }
+          }
+        },
+        "put": {
+          "summary": "Update a product",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Product" }
+              }
+            }
+          },
+          "responses": {
+            "200": { "description": "Product updated" }
+          }
+        },
+        "delete": {
+          "summary": "Delete a product",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Product deleted" }
+          }
+        }
+      },
+      "/api/categories": {
+        "get": {
+          "summary": "Get all categories",
+          "responses": {
+            "200": { "description": "List of categories" }
+          }
+        },
+        "post": {
+          "summary": "Create a new category",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Category" }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Category created" }
+          }
+        }
+      },
+      "/api/categories/{id}": {
+        "get": {
+          "summary": "Get category by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Category found" },
+            "404": { "description": "Category not found" }
+          }
+        },
+        "put": {
+          "summary": "Update a category",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Category" }
+              }
+            }
+          },
+          "responses": {
+            "200": { "description": "Category updated" }
+          }
+        },
+        "delete": {
+          "summary": "Delete a category",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Category deleted" }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Product": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "category": { "type": "string" },
+            "price": { "type": "number" },
+            "discountPercentage": { "type": "number" },
+            "variants": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "size": { "type": "string" },
+                  "color": { "type": "string" },
+                  "price": { "type": "number" },
+                  "quantity": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "Category": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+  
