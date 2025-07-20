@@ -18,7 +18,7 @@ npm install
 ### Environment Setup
 Create `.env` file:
 ```env
-MONGO_URI=https://cloud.mongodb.com/v2/6871386fb7c4706d5857a2e8#/metrics/replicaSet/6871392a8409ec58ceb4aa0c/explorer/test/categories/find
+MONGO_URI=your mongodb url
 ```
 
 ### Start Server
