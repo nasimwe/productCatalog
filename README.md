@@ -270,7 +270,14 @@ Response (200):
   "name": "iPhone 15 Pro",
   "price": 1199.99,
   "discountPercentage": 5,
-  "variants": [...],
+  "variants": [
+      {
+        "size": "128GB",
+        "color": "Blue",
+        "price": 999.99,
+        "quantity": 50
+      }
+    ],
   "createdAt": "2023-07-20T10:30:00.000Z"
 }
 ```
