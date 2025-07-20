@@ -10,16 +10,15 @@ A RESTful API for managing products and categories with MongoDB.
 
 ### Installation
 ```bash
-git clone <repository-url>
-cd productcatalog
+git clone <https://github.com/nasimwe/productCatalog.git>
+cd productCatalog
 npm install
 ```
 
 ### Environment Setup
 Create `.env` file:
 ```env
-MONGO_URI=mongodb://localhost:27017/product-catalog
-PORT=5000
+MONGO_URI=mongodb+srv://nasimwe:HDfE1maV1vgNbBYw@cluster0.io6q7di.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 ### Start Server
