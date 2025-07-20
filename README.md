@@ -10,7 +10,7 @@ A RESTful API for managing products and categories with MongoDB.
 
 ### Installation
 ```bash
-git clone <https://github.com/nasimwe/productCatalog.git>
+git clone https://github.com/nasimwe/productCatalog.git
 cd productCatalog
 npm install
 ```
@@ -26,6 +26,9 @@ MONGO_URI=your mongodb url
 npm start
 ```
 Server runs on `http://localhost:5000`
+
+### Alternatively
+You can try out the API via the hosted Swagger Documentation [Product Catalog Docs](https://productcatalog-vqc3.onrender.com/api-docs/)
 
 ## API Endpoints
 
