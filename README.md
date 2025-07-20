@@ -37,9 +37,9 @@ Server runs on `http://localhost:5000`
 - `DELETE /categories/:id` - Delete category
 
 ### Products
-- `GET /products` - Get all products (supports `?name=` and `?category=` filters)
+- `GET /products` - Get all products 
 - `POST /products` - Create product
-- `GET /products/low-stock` - Get low stock products (supports `?threshold=` parameter)
+- `GET /products/low-stock` - Get low stock products 
 - `GET /products/:id` - Get product by ID
 - `PUT /products/:id` - Update product
 - `DELETE /products/:id` - Delete product
