@@ -327,3 +327,6 @@ GET /products/low-stock?threshold=5
 - No authentication
 - No image upload support
 - Low stock based on any variant below threshold
+
+# Live Demo
+Here You can find the [Live Demo](https://youtu.be/TYpNkVext9Y)
